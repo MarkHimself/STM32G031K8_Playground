@@ -43,7 +43,7 @@ all: $(EXECUTABLE_WPATH)
 ########################################################################################################################
 
 # _OBJ: all the object files that need to be generated to build the binary file.
-_OBJ = main.o startup.o proc_exceptions.o
+_OBJ = main.o startup.o proc_exceptions.o GPIO_Output.o
 OBJ_PATH = obj
 OBJ = $(patsubst %,$(OBJ_PATH)/%,$(_OBJ))
 
@@ -56,7 +56,7 @@ ASMOBJ = $(patsubst %,$(ASMOBJ_PATH)/%,$(_ASMOBJ))
 
 # _DEPS: all the header files included inside of the "include" directory.
 # DEPS: include/filename1.h include/filename2.h  etc...
-_DEPS = main.h startup.h proc_exceptions.h
+_DEPS = main.h startup.h proc_exceptions.h GPIO_Output.h
 DEPS_PATH = include
 DEPS = $(patsubst %,$(DEPS_PATH)/%,$(_DEPS))
 
@@ -83,6 +83,9 @@ $(ODIR)/startup.o: src/startup.c $(DEPS)
 	$(CC) $(CFLAGS) -o $@ $< -I. $(DEBUG)
 
 $(ODIR)/proc_exceptions.o: src/proc_exceptions.c $(DEPS)
+	$(CC) $(CFLAGS) -o $@ $< -I. $(DEBUG)
+
+$(ODIR)/GPIO_Output.o: src/GPIO_Output.c $(DEPS)
 	$(CC) $(CFLAGS) -o $@ $< -I. $(DEBUG)
 
 

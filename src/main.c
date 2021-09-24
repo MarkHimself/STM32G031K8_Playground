@@ -46,6 +46,8 @@ int main(void){
 	// sin(PI/4) should be 0.7071067812 (radians)
 	
 	
+	GPIO_Output_Example();
+	
 	// loop forever
 	int i = 0;
 	while(1){
