@@ -8,7 +8,7 @@
 #include <math.h>
 
 #include "GPIO_Output.h"
-
+#include "GPIO_Input.h"
 
 
 #endif
