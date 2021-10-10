@@ -9,6 +9,7 @@
 
 #include "GPIO_Output.h"
 #include "GPIO_Input.h"
+#include "general_timers_pwm.h"
 
 
 #endif

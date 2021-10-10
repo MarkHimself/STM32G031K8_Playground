@@ -39,6 +39,7 @@ int main(void){
 	uint32_t divideTest1 = 56;
 	divideTest1 = divideTest1 / 5;
 	
+	uint32_t myClockSpeed = SystemCoreClock;
 	
 	float pi = 3.1415;
 	float mathTest1;
@@ -47,8 +48,9 @@ int main(void){
 	
 	
 	//GPIO_Output_Example();
-	GPIO_Input_Example();
+	//GPIO_Input_Example();
 	
+	init_pwm();
 	
 	// loop forever
 	int i = 0;
