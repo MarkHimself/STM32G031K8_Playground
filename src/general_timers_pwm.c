@@ -82,7 +82,7 @@ void Enable_TIM3_Clock(){
 	RCC->APBENR1 |= RCC_APBENR1_TIM3EN;					// Enable clock to TIM3						pg. 198
 }
 
-
+// get rid of _CH3 since only the timers (not the channels) get a reload value.
 void writeTIM3_CH3_Reload(uint32_t AR_Value){
 	TIM3->ARR = AR_Value;			// Auto reload register		pg. 689
 }

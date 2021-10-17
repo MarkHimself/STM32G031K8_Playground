@@ -43,7 +43,7 @@ all: $(EXECUTABLE_WPATH)
 ########################################################################################################################
 
 # _OBJ: all the object files that need to be generated to build the binary file.
-_OBJ = main.o startup.o proc_exceptions.o GPIO_Output.o GPIO_Input.o general_timers_pwm.o
+_OBJ = main.o startup.o proc_exceptions.o GPIO_Output.o GPIO_Input.o general_timers_pwm.o general_timers_oneshot.o
 OBJ_PATH = obj
 OBJ = $(patsubst %,$(OBJ_PATH)/%,$(_OBJ))
 
@@ -56,7 +56,7 @@ ASMOBJ = $(patsubst %,$(ASMOBJ_PATH)/%,$(_ASMOBJ))
 
 # _DEPS: all the header files included inside of the "include" directory.
 # DEPS: include/filename1.h include/filename2.h  etc...
-_DEPS = main.h startup.h proc_exceptions.h GPIO_Output.h GPIO_Input.h general_timers_pwm.h
+_DEPS = main.h startup.h proc_exceptions.h GPIO_Output.h GPIO_Input.h general_timers_pwm.h general_timers_oneshot.h
 DEPS_PATH = include
 DEPS = $(patsubst %,$(DEPS_PATH)/%,$(_DEPS))
 
@@ -92,6 +92,9 @@ $(ODIR)/GPIO_Input.o: src/GPIO_Input.c $(DEPS)
 	$(CC) $(CFLAGS) -o $@ $< -I. $(DEBUG)
 
 $(ODIR)/general_timers_pwm.o: src/general_timers_pwm.c $(DEPS)
+	$(CC) $(CFLAGS) -o $@ $< -I. $(DEBUG)
+	
+$(ODIR)/general_timers_oneshot.o: src/general_timers_oneshot.c $(DEPS)
 	$(CC) $(CFLAGS) -o $@ $< -I. $(DEBUG)
 
 #################### END OF: COMPILE EACH INDIVIDUAL SOURCE FILE ##########################

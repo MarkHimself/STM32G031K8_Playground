@@ -50,7 +50,8 @@ int main(void){
 	//GPIO_Output_Example();
 	//GPIO_Input_Example();
 	
-	init_pwm();
+	//init_pwm();
+	general_timers_oneshot_ex();
 	
 	// loop forever
 	int i = 0;
