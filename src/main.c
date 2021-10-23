@@ -51,7 +51,9 @@ int main(void){
 	//GPIO_Input_Example();
 	
 	//init_pwm();
-	general_timers_oneshot_ex();
+	//general_timers_oneshot_ex();
+	
+	TIM2_delay_ex();
 	
 	// loop forever
 	int i = 0;
