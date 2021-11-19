@@ -12,6 +12,6 @@
 #include "general_timers_pwm.h"
 #include "general_timers_oneshot.h"
 #include "general_timer2_timetracking.h"
-
+#include "adc.h"
 
 #endif

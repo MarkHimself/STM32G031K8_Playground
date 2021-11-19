@@ -52,8 +52,11 @@ int main(void){
 	
 	//init_pwm();
 	//general_timers_oneshot_ex();
+	//TIM2_delay_ex();
 	
-	TIM2_delay_ex();
+	__enable_irq();
+	ADC_Example1();
+	
 	
 	// loop forever
 	int i = 0;

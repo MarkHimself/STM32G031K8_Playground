@@ -126,6 +126,9 @@ void Reset_Handler(void){
 	// call SystemInit to initialize the microcontroller
 	SystemInit();
 	
+	// update the SystemCoreClock (not needed in this case)
+	SystemCoreClockUpdate();
+	
 	// call main
 	main();
 }
